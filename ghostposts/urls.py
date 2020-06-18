@@ -2,6 +2,6 @@ from django.urls import path
 from ghostposts import views
 
 urlpatterns = [
-    path('', views.index),
-    path('post/', views.ghost_post),
+    path('', views.index, name='home'),
+    path('post/', views.add_ghost_post),
 ]
