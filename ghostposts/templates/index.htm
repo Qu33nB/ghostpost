@@ -34,8 +34,12 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td>👍: {{ item.up_votes }}</td>
-                            <td>👎: {{ item.down_votes }}</td>
+                            <td>
+                                <button>👍</button> {{ item.up_votes }}
+                            </td>
+                            <td>
+                                <button>👎</button> {{ item.down_votes }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
