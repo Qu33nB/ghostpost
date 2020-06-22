@@ -8,17 +8,36 @@
 <body>
     <h1>Qu33n B's Spilling the Tea</h1>
 
-    <button>
-        <a href="/boasts/">Show only boasts!</a>
-    </button>
-    <button>
-        <a href="/roasts/">Show only roasts!</a>
-    </button>
-    <button>
-        <a href="/sort/">Sort by vote score!</a>
-    </button>
-
-    <ul>
+    <span>
+        <a href="/boasts/">
+            <button>
+                Show only boasts!
+            </button>
+        </a>
+    </span>
+    <span>
+        <a href="/roasts/">
+            <button>
+                Show only roasts!
+            </button>
+        </a>
+    </span>
+    <span>
+        <a href="/most-liked/">
+            <button>
+            Most liked!
+            </button>
+        </a>
+    </span>
+    <span>
+        <a href="/least_liked/">
+            <button>
+            Least liked!
+            </button>
+        </a>
+    </span>
+    <br>
+    <br>
         {% for item in data %}
             <li>{{ item.post }}</li>
 
@@ -35,10 +54,10 @@
                     <tbody>
                         <tr>
                             <td>
-                                <button>👍</button> {{ item.up_votes }}
+                                <a href="/like/{{item.id}}/"><button> 👍 </button></a> {{ item.up_votes }}
                             </td>
                             <td>
-                                <button>👎</button> {{ item.down_votes }}
+                                <a href="/dislike/{{item.id}}/"><button> 👎 </button></a> {{ item.down_votes }}
                             </td>
                         </tr>
                     </tbody>
@@ -52,8 +71,17 @@
 
 </ul>
 
-<button>
-<a href="post/">Give us the tea!</a>
-</button>
+<a href="/post/">
+    <button>
+Give us the tea!
+    </button>
+</a>
+
+<a href="/">
+    <button>
+    Return home!
+    </button>
+</a>
+
 </body>
 </html>
