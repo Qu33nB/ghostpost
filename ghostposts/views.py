@@ -21,3 +21,11 @@ def add_ghost_post(request):
 
     form = GhostPostForm()
     return render(request, 'post.htm', {'form': form})
+
+def boasts(request):
+    data = GhostPost.objects.filter(boast_or_roast=True)
+    return render(request, 'index.htm', {'data': data})
+
+def roasts(request):
+    data = GhostPost.objects.filter(boast_or_roast=False)
+    return render(request, 'index.htm', {'data': data})
